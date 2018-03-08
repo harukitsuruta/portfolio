@@ -25,21 +25,21 @@ li{list-style:none}
   font-family: 'Noto Serif Japanese';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/NotoSerifJP-Regular.woff') format('woff');
+  src: url('./fonts/NotoSerifJP-Regular.woff') format('woff');
   font-display: swap;
 }
 @font-face {
   font-family: 'Noto Serif Japanese';
   font-style: normal;
   font-weight: 500;
-  src: url('../fonts/NotoSerifJP-Medium.woff') format('woff');
+  src: url('./fonts/NotoSerifJP-Medium.woff') format('woff');
   font-display: swap;
 }
 @font-face {
   font-family: 'Noto Serif Japanese';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/NotoSerifJP-Bold.woff') format('woff');
+  src: url('./fonts/NotoSerifJP-Bold.woff') format('woff');
   font-display: swap;
 }
 .serif {
@@ -51,21 +51,21 @@ li{list-style:none}
   font-family: 'Noto Sans Japanese';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/NotoSansJP-Regular.woff') format('woff');
+  src: url('./fonts/NotoSansJP-Regular.woff') format('woff');
   font-display: swap;
 }
 @font-face {
   font-family: 'Noto Sans Japanese';
   font-style: normal;
   font-weight: 500;
-  src: url('../fonts/NotoSansJP-Medium.woff') format('woff');
+  src: url('./fonts/NotoSansJP-Medium.woff') format('woff');
   font-display: swap;
 }
 @font-face {
   font-family: 'Noto Sans Japanese';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/NotoSansJP-Bold.woff') format('woff');
+  src: url('./fonts/NotoSansJP-Bold.woff') format('woff');
   font-display: swap;
 }
 .sans {
