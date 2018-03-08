@@ -56,10 +56,18 @@ gulp.task('js.concat', function () {
     .pipe(browserSync.stream());
 });
 
-// defaultタスク
-gulp.task('default', function () {
+//browserSync
+gulp.task('watch', function(){
+  browserSync.init({
+    server: {
+      baseDir: "docs"
+    }
+  });
   //ファイルを監視（CSS）
   gulp.watch(['src/sass/**/*.scss'], ['css']);
   //ファイルを監視（JS）
   //gulp.watch(['src/js/**/*.js'], ['js']);
 });
+
+// defaultタスク
+gulp.task('default', ['css', 'watch']);
