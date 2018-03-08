@@ -1801,5 +1801,4 @@ particlesJS('particles-js',
       "background_size": "cover"
     }
   }
-
 );

@@ -52,12 +52,31 @@ gulp.task('js.concat', function () {
       }
     }))
     .pipe(concat('main.js'))
+    .pipe(gulp.dest('src/js'))
+    .pipe(browserSync.stream());
+});
+
+// JSのmini化を行うタスク
+gulp.task('js.uglify', function () {
+  return gulp.src('src/js/main.js')
+    .pipe(plumber({
+      errorHandler: function (err) {
+        console.log(err.messageFormatted);
+        this.emit('end');
+      }
+    }))
+    .pipe(uglify())
+    .pipe(rename('main.min.js'))
     .pipe(gulp.dest('docs/js'))
     .pipe(browserSync.stream());
 });
 
-//browserSync
+// タスクをまとめる
+gulp.task('js', ['js.concat', 'js.uglify']);  
+
+// 更新を監視するタスク
 gulp.task('watch', function(){
+  //browserSyncを実行
   browserSync.init({
     server: {
       baseDir: "docs"
@@ -66,8 +85,9 @@ gulp.task('watch', function(){
   //ファイルを監視（CSS）
   gulp.watch(['src/sass/**/*.scss'], ['css']);
   //ファイルを監視（JS）
-  //gulp.watch(['src/js/**/*.js'], ['js']);
+  gulp.watch(['src/js/**/*.js'], ['js']);
 });
+
 
 // defaultタスク
 gulp.task('default', ['css', 'watch']);
