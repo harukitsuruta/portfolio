@@ -33,6 +33,25 @@ gulp.task('css', function () {
     .pipe(gulp.dest('docs/css'));
 });
 
+// JSの結合を行うタスク
+gulp.task('js.concat', function () {
+  //読み込む順序を指定
+  const jsFiles = [
+    'src/js/stats.js',
+    'src/js/particles.js',
+    'src/js/index.js'
+  ];
+  return gulp.src(jsFiles)
+    .pipe(plumber({
+      errorHandler: function (err) {
+        console.log(err.messageFormatted);
+        this.emit('end');
+      }
+    }))
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('docs/js'));
+});
+
 // defaultタスク
 gulp.task('default', function () {
   //ファイルを監視（CSS）
