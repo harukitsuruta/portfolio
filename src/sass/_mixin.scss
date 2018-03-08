@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+/* ===========================
+set mixin
+=========================== */
+
+
+//set Vendor prefix
+$set-prefix: '' , -moz- , -webkit-;
+@mixin SetPrefix($name, $value) {
+	@each $prefix in $set-prefix {
+		#{$prefix}#{$name}: $value;
+	}
+}
+
+//set flex box
+@mixin flexbox {
+	display:-webkit-box; // old
+	display:-moz-box; // old
+	display:-ms-flexbox; // ie
+	display:-webkit-flex; // new
+	display:flex; // new
+}
+@mixin flex-wrap($wrap) {
+	-ms-flex-wrap:$wrap;
+	-webkit-flex-wrap:$wrap;
+	flex-wrap:$wrap;
+}
+@mixin flex($values) {
+	-webkit-box-flex: $values;
+	-moz-box-flex: $values;
+	-ms-flex: $values;
+	-webkit-flex: $values;
+	flex: $values;
+}
+@mixin flex-direction($direction) {
+	@if $direction == column {
+		-webkit-flex-direction:vertical;
+		-moz-flex-direction:vertical;
+		-ms-flex-direction:column;
+		-webkit-flex-direction:column;
+		flex-direction:column;
+	} @else if $direction == rev {
+		-ms-flex-direction:row-reverse;
+		-webkit-flex-direction:row-reverse;
+		flex-direction:row-reverse;
+	} @else {
+		-webkit-flex-direction:horizontal;
+		-moz-flex-direction:horizontal;
+		-ms-flex-direction:row;
+		-webkit-flex-direction:row;
+		flex-direction:row;		
+	}
+}
+@mixin box-align($align) {
+	-webkit-box-align:$align;
+	-ms-flex-align:$align;
+	-webkit-align-items:$align;
+	align-items:$align;
+}
+
+//set media queries
+$breakpoints: (
+	'sp-s': 'screen and (max-width: 320px)',
+	'sp': 'screen and (max-width: 414px)',
+	'tab': 'screen and (max-width: 768px)',
+	'pc': 'screen and (min-width: 769px)',
+	'pc-l': 'screen and (min-width: 1024px)',
+	'pc-ll': 'screen and (min-width: 1440px)',
+) !default;
+@mixin mq($breakpoint: tab) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+//css keyframes
+@mixin animation($animation-name) {
+  -webkit-animation: $animation-name;
+  -moz-animation: $animation-name;
+  animation: $animation-name;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@mixin keyframes($animation-name: animaton) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}

@@ -1,0 +1,35 @@
+@include keyframes(obj01) {
+  0% { @include SetPrefix(transform, scale(1) translate3d(0,0,0)); }
+  50% { @include SetPrefix(transform, scale(1.1) translate3d(-50px,200px,0)); }
+  100% { @include SetPrefix(transform, scale(1) translate3d(0,0,0)); }
+}
+@include keyframes(obj02) {
+  0% { @include SetPrefix(transform, scale(1) translate3d(0,0,0)); }
+  50% { @include SetPrefix(transform, scale(1) translate3d(-100px,50px,0)); }
+  100% { @include SetPrefix(transform, scale(1) translate3d(0,0,0)); }
+}
+@include keyframes(obj03) {
+  0% { @include SetPrefix(transform, scale(1) translate3d(0,0,0)); }
+  50% { @include SetPrefix(transform, scale(1.1) translate3d(100px,0,0)); }
+  100% { @include SetPrefix(transform, scale(1) translate3d(0,0,0)); }
+}
+@include keyframes(obj04) {
+  0% { @include SetPrefix(transform, rotate(0) scale(1) translate3d(0,0,0)); opacity: .1; }
+  50% { @include SetPrefix(transform, rotate(-45deg) scale(1.2) translate3d(0,0,0)); opacity: .3; }
+  100% { @include SetPrefix(transform, rotate(0) scale(1) translate3d(0,0,0)); opacity: .1; }
+}
+@include keyframes(obj05) {
+  0% { @include SetPrefix(transform, rotate(0) scale(1) translate3d(0,0,0)); opacity: .1; }
+  50% { @include SetPrefix(transform, rotate(-15deg) scale(1.5) translate3d(0,-20px,0)); opacity: .5; }
+  100% { @include SetPrefix(transform, rotate(0) scale(1) translate3d(0,0,0)); opacity: .1 }
+}
+@include keyframes(obj06) {
+  0% { @include SetPrefix(transform, rotate(0) scale(1) translate3d(0,0,0)); }
+  50% { @include SetPrefix(transform, rotate(-15deg) scale(1.5) translate3d(-50px,-20px,0)); }
+  100% { @include SetPrefix(transform, rotate(0) scale(1) translate3d(0,0,0)); }
+}
+@include keyframes(obj07) {
+  0% { @include SetPrefix(transform, rotate(0) scale(1) translate3d(0,0,0)); }
+  50% { @include SetPrefix(transform, rotate(240deg) scale(.8) translate3d(0,-250px,0)); }
+  100% { @include SetPrefix(transform, rotate(0) scale(1) translate3d(0,0,0)); }
+}

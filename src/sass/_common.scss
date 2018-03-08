@@ -1,0 +1,180 @@
+@charset "utf-8";
+/* =============================================================================
+   HTML5 CSS Reset Minified - Eric Meyer
+   ========================================================================== */
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+li{list-style:none}
+
+
+//web fonts
+//serif
+@font-face {
+  font-family: 'Noto Serif Japanese';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/NotoSerifJP-Regular.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Serif Japanese';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/NotoSerifJP-Medium.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Serif Japanese';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/NotoSerifJP-Bold.woff') format('woff');
+  font-display: swap;
+}
+.serif {
+  font-family: 'Noto Serif Japanese', serif, sans-serif;
+  line-height: 1.5;
+}
+//sanserif
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/NotoSansJP-Regular.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/NotoSansJP-Medium.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/NotoSansJP-Bold.woff') format('woff');
+  font-display: swap;
+}
+.sans {
+  font-family: 'Noto Sans Japanese', serif, sans-serif;
+  line-height: 1.5;
+}
+.en {
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+}
+
+
+html {
+  font-size: 62.5%;
+  //font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  font-family: 'Noto Sans Japanese', "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: 1;
+  color: #333;
+  @include mq(pc-ll) {
+	font-size: 72.5%;
+  }
+  @include mq(sp-s) {
+  	font-size: 55%;
+  }
+}
+
+a {
+	color: #333;
+	&:hover {
+		color: #333;
+	}
+	@include SetPrefix(user-select,none);
+}
+
+.gothic {
+	font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif;
+}
+$gothic: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ ゴシック", sans-serif;
+
+.bold {
+  font-weight: bold !important;
+}
+
+.align_center {
+  text-align: center !important;
+}
+.align_left {
+  text-align: left !important;
+}
+.align_right {
+  text-align: right !important;
+}
+
+/* = Selected Text
+----------------------------------------------- */
+::selection {
+	background:#39b2af; /* Safari */
+}
+
+::-moz-selection {
+	background:#39b2af; /* Firefox */
+}
+
+.clearfix:after {
+  content:" ";
+  display:block;
+  clear:both;
+}
+
+@for $i from 0 through 10 {
+  .mb#{$i * 10} {
+    margin-bottom:#{$i * 10}px !important;
+  }
+  @include mq(tab) {
+    .mb#{$i * 10} {
+      margin-bottom:#{$i * 1.5}% !important;
+    }    
+  }
+}
+
+.no_point {
+  pointer-events: none!important;
+}
+
+input:not([type="checkbox"]), button, textarea, select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  // -webkit-appearance: none;
+  // -moz-appearance: none;
+  // appearance: none;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  outline: none;
+  border: 1px solid #aaa;
+  @include SetPrefix(transition, all .3s);
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  box-shadow: 0 0 7px #1abc9c;
+  border: 1px solid #1abc9c;
+}
