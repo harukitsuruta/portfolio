@@ -25,7 +25,7 @@ gulp.task('css', function () {
     }))
     // Sassのコンパイルを実行
     .pipe(sass({
-      outputStyle: 'expanded'//expanded,compressed
+      outputStyle: 'compressed'//expanded,compressed
     }))
     //ソースマップの出力
     .pipe(sourcemaps.write('maps'))
