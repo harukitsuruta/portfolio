@@ -73,8 +73,13 @@ li{list-style:none}
   line-height: 1.5;
 }
 .en {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
+}
+.en2 {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 400;
+  letter-spacing: .09em;
 }
 
 
@@ -124,11 +129,11 @@ $gothic: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ"
 /* = Selected Text
 ----------------------------------------------- */
 ::selection {
-	background:#39b2af; /* Safari */
+	background:#00a0e9; /* Safari */
 }
 
 ::-moz-selection {
-	background:#39b2af; /* Firefox */
+	background:#00a0e9; /* Firefox */
 }
 
 .clearfix:after {
