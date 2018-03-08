@@ -16,6 +16,7 @@ const gulp = require('gulp'),
 // SASSのコンパイルを行うタスク
 gulp.task('css', function () {
   return gulp.src('src/sass/**/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(plumber({
       errorHandler: function (err) {
         console.log(err.messageFormatted);
