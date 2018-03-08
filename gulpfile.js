@@ -11,7 +11,9 @@ const gulp = require('gulp'),
   // エラーを起こしてもタスクが停止しないようにするプラグインの読み込み
   plumber = require('gulp-plumber'),
   // ファイル名を変更するプラグインの読み込み
-  rename = require('gulp-rename');
+  rename = require('gulp-rename'),
+  // browserSyncプラグインの読み込み
+  browserSync = require('browser-sync').create();
 
 // SASSのコンパイルを行うタスク
 gulp.task('css', function () {
@@ -30,7 +32,8 @@ gulp.task('css', function () {
     //ソースマップの出力
     .pipe(sourcemaps.write('maps'))
     // cssフォルダー以下に保存
-    .pipe(gulp.dest('docs/css'));
+    .pipe(gulp.dest('docs/css'))
+    .pipe(browserSync.stream());
 });
 
 // JSの結合を行うタスク
@@ -49,7 +52,8 @@ gulp.task('js.concat', function () {
       }
     }))
     .pipe(concat('main.js'))
-    .pipe(gulp.dest('docs/js'));
+    .pipe(gulp.dest('docs/js'))
+    .pipe(browserSync.stream());
 });
 
 // defaultタスク
