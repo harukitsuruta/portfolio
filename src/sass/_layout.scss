@@ -43,7 +43,7 @@
   @include mq(sp) {
     padding: 0 5.33%;
     left: 0;
-    bottom: 20%;
+    bottom: 15%;
   }
   .logo {
     width: 22%;
@@ -87,6 +87,7 @@
   z-index: 10;
   text-align: right;
   @include mq(sp) {
+    top: 12%;
     right: 0;
     padding: 0 5.333%;
   }
